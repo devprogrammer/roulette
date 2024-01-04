@@ -1,0 +1,58 @@
+body {
+  height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+  color: white;
+}
+
+h1 {
+  font-size: 32px
+}
+h2 {
+  font-size: 24px
+}
+h3 {
+  font-size: 20px
+}
+h4 {
+  font-size: 16px;
+}
+h5 {
+  font-size: 14px;
+}
+h6 {
+  font-size: 11px
+}
+.fa {
+  color: white
+}
+.horizontal-divider {
+  width: 1px;
+  height: 28px;
+  background-color: #80808080;
+}
+table {
+  color: white;
+}
+table th {
+  text-align: start;
+  color: rgb(71 85 105);
+  font-size: 14;
+  font-weight: 400;
+}
+
+table th, table tr {
+  height: 50px;
+}
+
+table tr:nth-child(even) {
+  background-color: #00000080;
+}
+hr {
+  border-color: gray;
+}
+
+#countdown-wrapper {
+  height: 320px;
+}

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roulette</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link href="./main.css" rel="stylesheet"/>
+
+</head>
+<body>
+  <!-- header -->
+  <section class="header flex justify-between items-center px-12 py-3 bg-gray-800">
+    <div class="flex gap-1 justify-center items-center">
+        <div class="w-[30px] h-[30px] rounded-full bg-white"></div>
+        <h2>Flipper</h2> 
+    </div>
+    <div class="flex gap-1 justify-center items-center">
+      <div class="w-[30px] h-[30px] rounded-full bg-white"></div>
+      <h5>49.5567717</h5> 
+      <div class="w-[30px] h-[30px] rounded-full bg-white"></div>
+    </div>
+    <div class="flex gap-6 justify-center items-center">
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <i class="fa fa-comments" aria-hidden="true"></i>
+      <i class="fa fa-bell" aria-hidden="true"></i>
+      <p>Peter Penn</p>
+      <img src="" width=30 height="30" alt="Avatar"/>
+    </div>
+  </section>
+  
+  <!-- Container -->
+  <section class="flex">
+    <!-- sidebar -->
+    <section class="sidebar flex flex-col justify-between bg-gray-800 w-1/6 px-12 py-6">
+      <div class="flex flex-col gap-8 font-medium">
+        <div class="flex items-center gap-4">
+          <i class="fa fa-adjust" aria-hidden="true"></i>
+          <p>Coinflip</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <i class="fa fa-adjust" aria-hidden="true"></i>
+          <p>Crash</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <i class="fa fa-adjust" aria-hidden="true"></i>
+          <p>Plinko</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <i class="fa fa-adjust" aria-hidden="true"></i>
+          <p>Doce</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <i class="fa fa-adjust" aria-hidden="true"></i>
+          <p>Lucky Wheel</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <i class="fa fa-adjust" aria-hidden="true"></i>
+          <p>Mines</p>
+        </div>
+  
+        <hr />
+  
+        <div class="flex items-center gap-4">
+          <i class="fa fa-adjust" aria-hidden="true"></i>
+          <p>Leaderboard</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <i class="fa fa-adjust" aria-hidden="true"></i>
+          <p>Statistics</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <i class="fa fa-adjust" aria-hidden="true"></i>
+          <p>Settings</p>
+        </div>
+      </div>
+      
+      <div class="flex justify-center gap-12 items-center mb-6">
+        <i class="fa fa-comments" aria-hidden="true"></i>
+        <i class="fa fa-comments" aria-hidden="true"></i>
+        <i class="fa fa-comments" aria-hidden="true"></i>
+      </div>
+    </section>
+  
+    <section class="content-container flex flex-col flex-1 bg-gray-900">
+      <!-- roulling -->
+      <section class="relative px-10 py-8 m-8 bg-gray-800 rounded-lg">
+        <div id="countdown-wrapper" class="absolute w-full left-0 top-0 bg-black bg-opacity-50 px-10 py-8 rounded-lg">
+          <h3>ROULETTE</h3>
+          <div class="flex flex-col gap-2 justify-center items-center mt-8">
+            <h4>ROLLING</h4>
+            <h1 id="countdown" class="font-bold">15</h1>
+          </div>
+        </div>
+        <div class="rolling-content flex flex-col items-center">
+          <div class="flex justify-center items-center gap-1 mt-8 scroll-auto">
+            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
+            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
+            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
+            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
+            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
+            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
+            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
+            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
+            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
+            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
+          </div>
+          <div class="flex justify-center gap-8 mt-12">
+            <p>PREVIOUS ROLLS</p>
+            <div class="flex justify-center gap-2">
+              <img src="./assets/h.jpg" width="30" height="30" class="rounded-full" alt="image"/>
+              <img src="./assets/h.jpg" width="30" height="30" class="rounded-full" alt="image"/>
+              <img src="./assets/h.jpg" width="30" height="30" class="rounded-full" alt="image"/>
+              <img src="./assets/h.jpg" width="30" height="30" class="rounded-full" alt="image"/>
+              <img src="./assets/h.jpg" width="30" height="30" class="rounded-full" alt="image"/>
+              <img src="./assets/h.jpg" width="30" height="30" class="rounded-full" alt="image"/>
+              <img src="./assets/h.jpg" width="30" height="30" class="rounded-full" alt="image"/>
+              <img src="./assets/h.jpg" width="30" height="30" class="rounded-full" alt="image"/>
+              <img src="./assets/h.jpg" width="30" height="30" class="rounded-full" alt="image"/>
+              <img src="./assets/h.jpg" width="30" height="30" class="rounded-full" alt="image"/>
+            </div>
+            <div class="flex justify-center items-center gap-4">
+              <p>LAST 100</p>
+              <div class="flex items-center gap-2">
+                <img src="./assets/h.jpg" width="30" height="30" class="rounded-full" alt="image"/>
+                <p>40</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <img src="./assets/h.jpg" width="30" height="30" class="rounded-full" alt="image"/>
+                <p>40</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <img src="./assets/h.jpg" width="30" height="30" class="rounded-full" alt="image"/>
+                <p>40</p>
+              </div>
+            </div>
+          </div>
+          <!-- enter bet amount -->
+          <div class="flex justify-center items-center gap-4 border border-gray-500 rounded-full px-4 py-2 mt-8">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <p class="text-gray-700">Enter bet amount...</p>
+
+            <div class="horizontal-divider"></div>
+            <div class="flex justify-center items-center gap-2 text-white">
+              <div class="bg-gray-700 rounded-full px-2">CLEAR</div>
+              <div class="bg-gray-700 rounded-full px-2">+0.01</div>
+              <div class="bg-gray-700 rounded-full px-2">+0.1</div>
+              <div class="bg-gray-700 rounded-full px-2">+1</div>
+              <div class="bg-gray-700 rounded-full px-2">+10</div>
+              <div class="bg-gray-700 rounded-full px-2">+100</div>
+              <div class="bg-gray-700 rounded-full px-2">1/2</div>
+              <div class="bg-gray-700 rounded-full px-2">X2</div>
+              <div class="bg-gray-700 rounded-full px-2">MAX</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- place bet -->
+        <div class="flex justify-center gap-6 px-10 mt-12">
+          <div class="flex flex-1 flex-col">
+            <div class="flex justify-between items-center border border-1 border-gray-500 rounded-full px-4 py-2">
+              <div class="flex justify-between items-center gap-2">
+                <img src="./assets/h.jpg" width="30" height="30" class="rounded-full"/>
+                <h4 class="text-gray-500">PLACE BET</h4>
+              </div>
+              <p class="text-gray-500">WIN 2X</p>
+            </div>
+            <div class="table px-4 py-3 mt-2 bg-gray-700 rounded-lg">
+              <div class="flex justify-between items-center">
+                <p class="text-gray-500">17 Bets Total</p>
+                <p class="text-gray-500">139.10</p>
+              </div>
+              <hr class="my-3" />
+              <div class="flex justify-between items-center mt-1">
+                <div class="flex justify-center items-center gap-2">
+                  <img src="./assets/h.jpg" width="20" height="20" class="rounded-full"/>
+                  <p class="text-gray-500">FenRick</p>
+                </div>
+                <p class="text-gray-500">40.00</p>
+              </div>
+              <div class="flex justify-between items-center mt-1">
+                <div class="flex justify-center items-center gap-2">
+                  <img src="./assets/h.jpg" width="20" height="20" class="rounded-full"/>
+                  <p class="text-gray-500">FenRick</p>
+                </div>
+                <p class="text-gray-500">40.00</p>
+              </div>
+              <div class="flex justify-between items-center mt-1">
+                <div class="flex justify-center items-center gap-2">
+                  <img src="./assets/h.jpg" width="20" height="20" class="rounded-full"/>
+                  <p class="text-gray-500">FenRick</p>
+                </div>
+                <p class="text-gray-500">40.00</p>
+              </div>
+              <div class="flex justify-between items-center mt-1">
+                <div class="flex justify-center items-center gap-2">
+                  <img src="./assets/h.jpg" width="20" height="20" class="rounded-full"/>
+                  <p class="text-gray-500">FenRick</p>
+                </div>
+                <p class="text-gray-500">40.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-1 flex-col">
+            <div class="flex justify-between items-center border border-1 border-gray-500 rounded-full px-4 py-2">
+              <div class="flex justify-between items-center gap-2">
+                <img src="./assets/h.jpg" width="30" height="30" class="rounded-full"/>
+                <h4 class="text-gray-500">PLACE BET</h4>
+              </div>
+              <p class="text-gray-500">WIN 2X</p>
+            </div>
+            <div class="table px-4 py-3 mt-2 bg-gray-700 rounded-lg">
+              <div class="flex justify-between items-center">
+                <p class="text-gray-500">17 Bets Total</p>
+                <p class="text-gray-500">139.10</p>
+              </div>
+              <hr class="my-3" />
+              <div class="flex justify-between items-center mt-1">
+                <div class="flex justify-center items-center gap-2">
+                  <img src="./assets/h.jpg" width="20" height="20" class="rounded-full"/>
+                  <p class="text-gray-500">FenRick</p>
+                </div>
+                <p class="text-gray-500">40.00</p>
+              </div>
+              <div class="flex justify-between items-center mt-1">
+                <div class="flex justify-center items-center gap-2">
+                  <img src="./assets/h.jpg" width="20" height="20" class="rounded-full"/>
+                  <p class="text-gray-500">FenRick</p>
+                </div>
+                <p class="text-gray-500">40.00</p>
+              </div>
+              <div class="flex justify-between items-center mt-1">
+                <div class="flex justify-center items-center gap-2">
+                  <img src="./assets/h.jpg" width="20" height="20" class="rounded-full"/>
+                  <p class="text-gray-500">FenRick</p>
+                </div>
+                <p class="text-gray-500">40.00</p>
+              </div>
+              <div class="flex justify-between items-center mt-1">
+                <div class="flex justify-center items-center gap-2">
+                  <img src="./assets/h.jpg" width="20" height="20" class="rounded-full"/>
+                  <p class="text-gray-500">FenRick</p>
+                </div>
+                <p class="text-gray-500">40.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-1 flex-col">
+            <div class="flex justify-between items-center border border-1 border-gray-500 rounded-full px-4 py-2">
+              <div class="flex justify-between items-center gap-2">
+                <img src="./assets/h.jpg" width="30" height="30" class="rounded-full"/>
+                <h4 class="text-gray-500">PLACE BET</h4>
+              </div>
+              <p class="text-gray-500">WIN 2X</p>
+            </div>
+            <div class="table px-4 py-3 mt-2 bg-gray-700 rounded-lg">
+              <div class="flex justify-between items-center">
+                <p class="text-gray-500">17 Bets Total</p>
+                <p class="text-gray-500">139.10</p>
+              </div>
+              <hr class="my-3" />
+              <div class="flex justify-between items-center mt-1">
+                <div class="flex justify-center items-center gap-2">
+                  <img src="./assets/h.jpg" width="20" height="20" class="rounded-full"/>
+                  <p class="text-gray-500">FenRick</p>
+                </div>
+                <p class="text-gray-500">40.00</p>
+              </div>
+              <div class="flex justify-between items-center mt-1">
+                <div class="flex justify-center items-center gap-2">
+                  <img src="./assets/h.jpg" width="20" height="20" class="rounded-full"/>
+                  <p class="text-gray-500">FenRick</p>
+                </div>
+                <p class="text-gray-500">40.00</p>
+              </div>
+              <div class="flex justify-between items-center mt-1">
+                <div class="flex justify-center items-center gap-2">
+                  <img src="./assets/h.jpg" width="20" height="20" class="rounded-full"/>
+                  <p class="text-gray-500">FenRick</p>
+                </div>
+                <p class="text-gray-500">40.00</p>
+              </div>
+              <div class="flex justify-between items-center mt-1">
+                <div class="flex justify-center items-center gap-2">
+                  <img src="./assets/h.jpg" width="20" height="20" class="rounded-full"/>
+                  <p class="text-gray-500">FenRick</p>
+                </div>
+                <p class="text-gray-500">40.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- daily roulette race -->
+      <section class="px-6 py-8 m-8 bg-gray-800 rounded-lg">
+        <div class="flex justify-between items-center">
+          <h2>Daily Roulette Race</h2>
+          <p>Ends in 5h 23 mins 11 sec</p>
+        </div>
+
+        <table class="table-fixed border-collapse border-slate-900 w-full mt-10">
+          <thead class="text-inherit">
+            <th class="pl-3">Game</th>
+            <th>Time</th>
+            <th>Bet Amount</th>
+            <th>Multiplier</th>
+            <th>Payout</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="pl-3">Arsenal (Alicia) - Cheisea (July)</td>
+              <td>00:23</td>
+              <td>0.46278200</td>
+              <td>1.01</td>
+              <td class="text-green">0.47378200</td>
+            </tr>
+            <tr>
+              <td class="pl-3">Arsenal (Alicia) - Cheisea (July)</td>
+              <td>00:23</td>
+              <td>0.46278200</td>
+              <td>1.01</td>
+              <td class="text-green">0.47378200</td>
+            </tr>
+            <tr>
+              <td class="pl-3">Arsenal (Alicia) - Cheisea (July)</td>
+              <td>00:23</td>
+              <td>0.46278200</td>
+              <td>1.01</td>
+              <td class="text-green">0.47378200</td>
+            </tr>
+            <tr>
+              <td class="pl-3">Arsenal (Alicia) - Cheisea (July)</td>
+              <td>00:23</td>
+              <td>0.46278200</td>
+              <td>1.01</td>
+              <td class="text-green">0.47378200</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </section>
+  <script>
+    var count = 1500;
+    // Update the count down every 1 second
+    var timer = setInterval(function() {
+      const now = count - 10
+      count--;
+      document.getElementById("countdown").innerHTML = parseFloat(now/100).toFixed(2);
+      // If the count down is finished, write some text
+      if (now < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+
+        document.getElementById("countdown-wrapper").style.display = "none"
+      }
+    }, 10);
+  </script>
+</body>
+</html>
