@@ -86,19 +86,20 @@
     <section class="content-container flex flex-col flex-1 bg-gray-900">
       <!-- roulling -->
       <section class="relative px-10 py-8 m-8 bg-gray-800 rounded-lg">
-        <div id="countdown-wrapper" class="absolute w-full left-0 top-0 bg-black bg-opacity-50 px-10 py-8 rounded-lg">
+        <div id="countdown-wrapper" class="absolute w-full left-0 top-0 px-10 py-8 rounded-lg z-10">
           <h3>ROULETTE</h3>
+          <div class="text-center uppercase tracking-wide text-light-grey-1 mt-10">
+            <h4>ROLLING</h4>
+            <h1 id="countdown" class="font-bold">15</h1>
+          </div>
         </div>
         <div class="rolling-content flex flex-col items-center">
-          <div class="rolling relative mx-auto mb-8 w-full lg:mb-12" 
+          <div class="rolling relative mx-auto my-8 w-full lg:mb-12" 
             style="background-position: 425.5px center; transition: none 0s ease 0s;">
             <div class="rolling__marker wheel__item absolute z-10"></div>
             <div class="rolling__item wheel__mask absolute left-0 top-0 z-10 h-full w-full wheel__item--visible"></div>
             <div class="rolling__item absolute z-20 flex h-full w-full items-center justify-center rolling__item--visible"><!---->
-              <div class="text-center uppercase tracking-wide text-light-grey-1">
-                <h4>ROLLING</h4>
-                <h1 id="countdown" class="font-bold">15</h1>
-              </div>
+
             </div>
           </div>
           <div class="flex justify-center gap-8 mt-12">
@@ -338,28 +339,38 @@
     </section>
   </section>
   <script>
-    var count = 1000;
-    var backPosition = Math.floor(Math.random() * 1000 + 5000);
-    const decayRate = 0.01;
-    // Update the count down every 1 second
-    const rollingContainer = document.getElementsByClassName('rolling');
-    var timer = setInterval(function() {
-      const now = count - 10
-      count--;
-      document.getElementById("countdown").innerHTML = parseFloat(now/100).toFixed(2);
-      // If the count down is finished, write some text
-      if (now < 0) {
-        rollingContainer[0].style.backgroundPosition = backPosition + "px";
-        backPosition -= 40 * Math.exp(decayRate * now)
+    
+    function rollingFunc() {
+      var count = 1000;
+      var backPosition = Math.floor(Math.random() * 1000 + 5000);
+      const decayRate = 0.01;
+      // Update the count down every 1 second
+      const rollingContainer = document.getElementsByClassName('rolling');
+      var timer = setInterval(function() {
+        const now = count - 10
+        count--;
+        // If the count down is finished, write some text
+        if (now < 0) {
+          rollingContainer[0].style.backgroundPosition = backPosition + "px";
+          backPosition -= 40 * Math.exp(decayRate * now)
+    
+          if (backPosition < 400) {
+            clearInterval(timer);
+            // document.getElementById("countdown").style.display = "block"
+            // document.getElementById("countdown").innerHTML = "10";
+            // setTimeout(() => {
+            //   rollingFunc();
+            // }, 1000);
+          }
   
-        if (backPosition < 400) {
-          clearInterval(timer);
+          // document.getElementById("countdown").innerHTML = "EXPIRED";
+          document.getElementById("countdown-wrapper").style.display = "none"
+        } else {
+          document.getElementById("countdown").innerHTML = parseFloat(now/100).toFixed(2);
         }
-
-        document.getElementById("countdown").innerHTML = "EXPIRED";
-        document.getElementById("countdown").style.display = "none"
-      }
-    }, 10);
+      }, 10);
+    }
+    rollingFunc();
   </script>
 </body>
 </html>
