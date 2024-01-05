@@ -88,23 +88,18 @@
       <section class="relative px-10 py-8 m-8 bg-gray-800 rounded-lg">
         <div id="countdown-wrapper" class="absolute w-full left-0 top-0 bg-black bg-opacity-50 px-10 py-8 rounded-lg">
           <h3>ROULETTE</h3>
-          <div class="flex flex-col gap-2 justify-center items-center mt-8">
-            <h4>ROLLING</h4>
-            <h1 id="countdown" class="font-bold">15</h1>
-          </div>
         </div>
         <div class="rolling-content flex flex-col items-center">
-          <div class="flex justify-center items-center gap-1 mt-8 scroll-auto">
-            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
-            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
-            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
-            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
-            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
-            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
-            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
-            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
-            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
-            <img src="./assets/h.jpg" width="80" height="80" class="rounded-full" alt="image"/>
+          <div class="rolling relative mx-auto mb-8 w-full lg:mb-12" 
+            style="background-position: 425.5px center; transition: none 0s ease 0s;">
+            <div class="rolling__marker wheel__item absolute z-10"></div>
+            <div class="rolling__item wheel__mask absolute left-0 top-0 z-10 h-full w-full wheel__item--visible"></div>
+            <div class="rolling__item absolute z-20 flex h-full w-full items-center justify-center rolling__item--visible"><!---->
+              <div class="text-center uppercase tracking-wide text-light-grey-1">
+                <h4>ROLLING</h4>
+                <h1 id="countdown" class="font-bold">15</h1>
+              </div>
+            </div>
           </div>
           <div class="flex justify-center gap-8 mt-12">
             <p>PREVIOUS ROLLS</p>
@@ -343,18 +338,26 @@
     </section>
   </section>
   <script>
-    var count = 1500;
+    var count = 100;
+    var backPosition = Math.floor(Math.random() * 1000 + 5000);
+    const decayRate = 0.01;
     // Update the count down every 1 second
+    const rollingContainer = document.getElementsByClassName('rolling');
     var timer = setInterval(function() {
       const now = count - 10
       count--;
       document.getElementById("countdown").innerHTML = parseFloat(now/100).toFixed(2);
       // If the count down is finished, write some text
       if (now < 0) {
-        clearInterval(timer);
-        document.getElementById("countdown").innerHTML = "EXPIRED";
+        rollingContainer[0].style.backgroundPosition = backPosition + "px";
+        backPosition -= 40 * Math.exp(decayRate * now)
+  
+        if (backPosition < 400) {
+          clearInterval(timer);
+        }
 
-        document.getElementById("countdown-wrapper").style.display = "none"
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+        document.getElementById("countdown").style.display = "none"
       }
     }, 10);
   </script>
